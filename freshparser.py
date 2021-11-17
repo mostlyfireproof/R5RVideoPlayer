@@ -12,6 +12,8 @@ w, h, COLORSPACE = metadata.split()
 WIDTH = int(w)
 HEIGHT = int(h)
 
+HEADER = "global function GetAnimation\n\narray<string> function GetAnimation() {\n    array<string> animation = []\n"
+FOOTER = "\n    printt(\"Loaded animation\")\n    return animation\n}"
 
 def list_to_str(arr=list) -> str:
     """ Turns a list in to a string """
@@ -31,8 +33,9 @@ for line in range(1, len(data)):
 rotated = list(zip(*everything))[::-1]
 
 # writes it out to the file
-out.write("    array<string> animation = []\n")
+out.write(HEADER)
 
 for e in rotated:
     out.write(f'    animation.append( "{list_to_str(e)}" )\n')
 
+out.write(FOOTER)
