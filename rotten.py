@@ -1,3 +1,5 @@
+# Originally from https://gitlab.com/delbonis/rottenplayer/-/blob/master/rotten.py
+
 import sys
 import math
 import statistics as stats
